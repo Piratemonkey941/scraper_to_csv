@@ -1,0 +1,35 @@
+PATH
+  remote: .
+  specs:
+    scrape_to_csv (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    csv (3.2.6)
+    date (3.3.3)
+    nokogiri (1.14.0-x86_64-linux)
+      racc (~> 1.4)
+    open-uri (0.3.0)
+      stringio
+      time
+      uri
+    racc (1.6.2)
+    rake (13.0.6)
+    stringio (3.0.4)
+    time (0.2.1)
+      date
+    uri (0.12.0)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  csv
+  nokogiri
+  open-uri
+  rake (~> 13.0)
+  scrape_to_csv!
+
+BUNDLED WITH
+   2.4.3
