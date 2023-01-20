@@ -2,11 +2,11 @@ class CLI
     attr_accessor :user                 # creating accessor for the user variable
     
     def run
-        Scraper.run                 #scrape information
         User.seed                   # seed user data  
-        system('clear')             # clear terminal
+        # system('clear')             # clear terminal
         login_or_signup             # login or signup
-        greeting
+        greet_user
+        Scraper.run                 #scrape information
         while 
             menu != "exit"
         end
@@ -59,9 +59,9 @@ class CLI
         end
     end
 
-    def greeting
-     puts "Welcome #{@user.username} to etsy item finder"
-    end
+    # def greeting
+    #  puts "Welcome #{@user.username} to etsy item finder"
+    # end
 
     def greet_user                                      # Displays a greeting message when the program starts
         puts "Welcome #{@user.username}"
@@ -78,7 +78,7 @@ class CLI
  
     def choose_option(input)
         case input
-            when ""
+            when input
                 puts "Searching for #{input}"
             
             else

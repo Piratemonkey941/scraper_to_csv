@@ -1,11 +1,14 @@
 require "open-uri"
 require "nokogiri"
 require "csv"
+require_relative 'cli.rb'
 
 class Scraper
+
     def self.run
+        input = CLI.new.menu
         # Define the URL of the webpage to be scraped
-        scraping_url = 'https://www.etsy.com/search?q=marvel'
+        scraping_url = 'https://www.etsy.com/search?q='+ input
 
         # Open the webpage and read the HTML content
         html = URI.open("#{scraping_url}").read

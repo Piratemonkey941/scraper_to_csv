@@ -1,5 +1,5 @@
 require 'bcrypt'
-require 'pry'
+# require 'pry'
 
 module Auth
     # This method creates a hash digest of the given password using the 
