@@ -22,6 +22,7 @@ class User
     def self.seed                                            #seed method to seed the user data
         users = 
         [
+            {username: "j", password: "p"},
             {username: "john123", password: "password"},
             {username: "jane456", password: "password"},
             {username: "mike789", password: "password"},
