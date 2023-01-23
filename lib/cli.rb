@@ -3,13 +3,16 @@ class CLI
     
     def run
         User.seed                   # seed user data  
-        # system('clear')             # clear terminal
+        # system('clear')           # clear terminal
         login_or_signup             # login or signup
         greet_user
-        Scraper.run                 #scrape information
-        while 
-            menu != "exit"
-        end
+        menu
+        # if @user                        # check if user is logged in
+        #     Scraper.scraping(input)               #scrape information
+        #     while 
+        #         menu != "exit"
+        #     end
+        # end
         end_program
     end
  
@@ -80,7 +83,7 @@ class CLI
         case input
             when input
                 puts "Searching for #{input}"
-            
+                Scraper.scraping(input)               #scrape information
             else
                 puts "Invalid selection, please try again."
             
