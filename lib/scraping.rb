@@ -19,23 +19,42 @@ require_relative 'cli.rb'
             @final_array.each_with_index do |element, index|
                 puts "#{index + 1} - #{element}"
             end
+            csv_generator(input)
+        end
+
+        def self.csv_generator(input)
+
+            filepath = "#{input}.csv"
+    
+            csv_options = {headers: :first_row, col_sep: ','}
+    
+            CSV.open(filepath, 'wb') do |csv|
+                csv << ['title', 'index']
+                @final_array.each_with_index do |item, index|
+                    csv << [item, index]
+                end
+    
+            end
         end
     end
 
     # Now you can create an instance of the class
-    scraper = Scraper.new
+    # scraper = Scraper.new
     
     #and call the scraping method on the instance
     # scraper.scraping("https://www.etsy.com/search?q=#{input}")
+    # def self.csv_generator
 
-    filepath = "test.csv"
+    #     filepath = "test.csv"
 
-    csv_options = {headers: :first_row, col_sep: ','}
+    #     csv_options = {headers: :first_row, col_sep: ','}
 
-    # CSV.open(filepath, 'wb') do |csv|
-    #     csv << ['title', 'index']
-    #     @final_array.each_with_index do |item, index|
-    #         csv << [item, index]
+    #     CSV.open(filepath, 'wb') do |csv|
+    #         csv << ['title', 'index']
+    #         @final_array.each_with_index do |item, index|
+    #             csv << [item, index]
+    #         end
+
     #     end
     # end
 

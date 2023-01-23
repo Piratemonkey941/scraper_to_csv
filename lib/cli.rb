@@ -7,13 +7,8 @@ class CLI
         login_or_signup             # login or signup
         greet_user
         menu
-        # if @user                        # check if user is logged in
-        #     Scraper.scraping(input)               #scrape information
-        #     while 
-        #         menu != "exit"
-        #     end
-        # end
-        end_program
+       
+        # end_program
     end
  
     def login_or_signup
@@ -70,27 +65,32 @@ class CLI
         puts "Welcome #{@user.username}"
        end
  
-    def menu
-     #asks the user which one do they want
-     puts "What are you looking for today?"
-     input = gets.chomp
-     choose_option(input)
-     return input 
+       def menu
+        while true do
+            #asks the user which one do they want
+            puts "What are you looking for today?"
+            input = gets.chomp
+            if input == "exit"
+                end_program
+                break
+            end
+            choose_option(input)
+        end
     end
- 
- 
+    
     def choose_option(input)
         case input
             when input
                 puts "Searching for #{input}"
                 Scraper.scraping(input)               #scrape information
+            when input == "exit"
+                end_program            #scrape information
             else
                 puts "Invalid selection, please try again."
-            
         end
     end
 
     def end_program
         puts "See you next time #{@user.username}!"
-       end
+    end
 end
