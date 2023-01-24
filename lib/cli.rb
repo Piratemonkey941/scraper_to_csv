@@ -57,9 +57,6 @@ class CLI
         end
     end
 
-    # def greeting
-    #  puts "Welcome #{@user.username} to etsy item finder"
-    # end
 
     def greet_user                                      # Displays a greeting message when the program starts
         puts "Welcome #{@user.username}"
